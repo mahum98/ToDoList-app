@@ -3,15 +3,16 @@ import psycopg2
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key'  # Needed for flash messages
-
+app.secret_key = 'your-secret-key'
 # Database connection
 def get_db_connection():
+    with open(os.environ.get("DB_PASSWORD_FILE")) as f:
+        db_password = f.read().strip()
     conn = psycopg2.connect(
-        host="db",
-        database="mydb",
-        user="myuser",
-        password=os.getenv("DB_PASSWORD")
+        host=os.environ.get("DB_HOST"),
+        database=os.environ.get("DB_NAME"),
+        user=os.environ.get("DB_USER"),
+        password=db_password
     )
     return conn
 

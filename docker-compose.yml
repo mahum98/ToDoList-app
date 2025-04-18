@@ -1,11 +1,12 @@
-version: '3.8'
-
 services:
   web:
     build: .
     ports:
       - "5000:5000"
     environment:
+      - DB_HOST=db
+      - DB_USER=myuser
+      - DB_NAME=mydb
       - DB_PASSWORD_FILE=/run/secrets/db_password
     secrets:
       - db_password
@@ -23,9 +24,9 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
-volumes:
-  db-data:
-
 secrets:
   db_password:
     file: ./db_password.txt
+
+volumes:
+  db-data:
