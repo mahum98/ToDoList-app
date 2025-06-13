@@ -16,7 +16,6 @@ def get_db_connection():
     )
     return conn
 
-# Initialize database
 def init_db():
     conn = get_db_connection()
     c = conn.cursor()
