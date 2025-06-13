@@ -1,13 +1,16 @@
+version: "3.8"
+
 services:
   web:
     build: .
+    image: mahum98/todolist:latest
     ports:
       - "5000:5000"
     environment:
-      - DB_HOST=db
-      - DB_USER=myuser
-      - DB_NAME=mydb
-      - DB_PASSWORD_FILE=/run/secrets/db_password
+      DB_HOST: db
+      DB_USER: myuser
+      DB_NAME: mydb
+      DB_PASSWORD_FILE: /run/secrets/db_password
     secrets:
       - db_password
     depends_on:
@@ -16,17 +19,17 @@ services:
   db:
     image: postgres:13
     environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
-      - POSTGRES_DB=mydb
+      POSTGRES_USER: myuser
+      POSTGRES_DB: mydb
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
     secrets:
       - db_password
     volumes:
       - db-data:/var/lib/postgresql/data
 
-secrets:
-  db_password:
-    file: ./db_password.txt
-
 volumes:
   db-data:
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
