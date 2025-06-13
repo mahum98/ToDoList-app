@@ -1,0 +1,25 @@
+# Dockerfile.selenium
+
+FROM python:3.9-slim
+
+# Install Chrome
+RUN apt-get update && apt-get install -y \
+    wget \
+    gnupg \
+    unzip \
+    curl \
+    chromium-driver \
+    chromium
+
+# Set display port for headless testing
+ENV DISPLAY=:99
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install selenium
+
+COPY . .
+
+CMD ["python3", "selenium_tests.py"]
