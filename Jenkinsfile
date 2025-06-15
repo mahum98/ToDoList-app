@@ -6,9 +6,16 @@ pipeline {
     }
 
     stages {
+        stage('Code Linting') {
+            steps {
+                sh 'pip install flake8'
+                sh 'flake8 app.py'
+            }
+        }
+
         stage('Clone Repository') {
             steps {
-                checkout scm
+                git 'https://github.com/mahum98/ToDoList-app.git'
             }
         }
 
@@ -27,7 +34,7 @@ pipeline {
         stage('Selenium Tests') {
             steps {
                 sh 'docker build -f Dockerfile.selenium -t selenium-tests .'
-                sh 'docker run --network="host" selenium-tests'
+                sh 'docker run --rm --network=host selenium-tests'
             }
         }
 
