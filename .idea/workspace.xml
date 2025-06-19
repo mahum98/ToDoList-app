@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0c0a5c5-3504-45f4-845f-bb0b591a1071" name="Changes" comment="selenium">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.selenium" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.selenium" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_tests.py" afterDir="false" />
+    <list default="true" id="c0c0a5c5-3504-45f4-845f-bb0b591a1071" name="Changes" comment="click error">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,12 +130,40 @@
       <option name="project" value="LOCAL" />
       <updated>1750006679546</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="selenium">
+      <option name="closed" value="true" />
+      <created>1750359227030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750359227030</updated>
+    </task>
+    <task id="LOCAL-00009" summary="click error">
+      <option name="closed" value="true" />
+      <created>1750359245816</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750359245816</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2nd commit" />
     <MESSAGE value="selenium" />
-    <option name="LAST_COMMIT_MESSAGE" value="selenium" />
+    <MESSAGE value="click error" />
+    <option name="LAST_COMMIT_MESSAGE" value="click error" />
   </component>
 </project>
