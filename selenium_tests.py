@@ -25,11 +25,11 @@ def test_page_title():
 def test_add_task():
     driver = setup_driver()
     driver.get("http://localhost:5000")
-    task_input = driver.find_element(By.NAME, "task")  # Adjust name attr if needed
+    task_input = driver.find_element(By.NAME, "task")
     task_input.send_keys("Test Task")
     task_input.send_keys(Keys.RETURN)
     time.sleep(1)
-    tasks = driver.find_elements(By.CLASS_NAME, "task")  # Adjust class if needed
+    tasks = driver.find_elements(By.CLASS_NAME, "task")
     assert any("Test Task" in t.text for t in tasks), "Task not added"
     print("✅ Add task test passed")
     driver.quit()
